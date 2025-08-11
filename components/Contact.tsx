@@ -1,0 +1,189 @@
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Badge } from "./ui/badge";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
+
+export function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log("Form submitted:", formData);
+    // Reset form
+    setFormData({ name: "", email: "", subject: "", message: "" });
+    alert("Thank you for your message! I'll get back to you soon.");
+  };
+
+  const contactInfo = [
+    {
+      icon: Mail,
+      label: "Email",
+      value: "john.doe@example.com",
+      link: "mailto:john.doe@example.com"
+    },
+    {
+      icon: Phone,
+      label: "Phone",
+      value: "+1 (555) 123-4567",
+      link: "tel:+15551234567"
+    },
+    {
+      icon: MapPin,
+      label: "Location",
+      value: "San Francisco, CA",
+      link: "https://maps.google.com"
+    }
+  ];
+
+  return (
+    <section id="contact" className="py-20">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <Badge variant="outline" className="mb-4">Get In Touch</Badge>
+            <h2 className="text-3xl md:text-4xl mb-6">
+              Let's work together
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              I'm always interested in hearing about new projects and opportunities. 
+              Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-xl mb-6">Send me a message</h3>
+              <Card>
+                <CardContent className="p-6">
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label htmlFor="name" className="block text-sm mb-2">
+                          Name *
+                        </label>
+                        <Input
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          required
+                          placeholder="Your name"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="email" className="block text-sm mb-2">
+                          Email *
+                        </label>
+                        <Input
+                          id="email"
+                          name="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          required
+                          placeholder="your.email@example.com"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label htmlFor="subject" className="block text-sm mb-2">
+                        Subject *
+                      </label>
+                      <Input
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleInputChange}
+                        required
+                        placeholder="Project inquiry"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="message" className="block text-sm mb-2">
+                        Message *
+                      </label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        required
+                        placeholder="Tell me about your project..."
+                        rows={5}
+                      />
+                    </div>
+                    <Button type="submit" size="lg" className="w-full">
+                      <Send className="h-4 w-4 mr-2" />
+                      Send Message
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div>
+              <h3 className="text-xl mb-6">Contact information</h3>
+              <div className="space-y-6">
+                {contactInfo.map((info, index) => (
+                  <Card key={index}>
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-4">
+                        <div className="p-3 bg-primary/10 rounded-lg">
+                          <info.icon className="h-6 w-6 text-primary" />
+                        </div>
+                        <div>
+                          <p className="text-sm text-muted-foreground">{info.label}</p>
+                          <a
+                            href={info.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-medium hover:text-primary transition-colors"
+                          >
+                            {info.value}
+                          </a>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+
+                <Card className="bg-primary text-primary-foreground">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Available for Work</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm opacity-90 mb-4">
+                      I'm currently available for freelance projects and full-time opportunities. 
+                      Let's discuss how we can work together!
+                    </p>
+                    <Button 
+                      variant="secondary" 
+                      size="sm"
+                      onClick={() => window.open("mailto:john.doe@example.com")}
+                    >
+                      Hire Me
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
