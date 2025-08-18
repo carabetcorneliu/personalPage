@@ -3,48 +3,54 @@ import { Badge } from "./ui/badge";
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 
 export function Hero() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative">
+    <section
+      id="hero"
+      className="min-h-screen flex items-center justify-center relative"
+    >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <Badge variant="secondary" className="mb-6">
-            Available for new opportunities
+            Open to roles · Remote/
+            <span className="line-through" aria-hidden="true">
+              On-site
+            </span>
+            <span className="sr-only">On-site not preferred</span>
           </Badge>
-          
+
           <h1 className="text-4xl md:text-6xl lg:text-7xl mb-6">
             Full Stack
             <span className="block text-primary">Developer</span>
           </h1>
-          
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            I create exceptional digital experiences through clean code and thoughtful design. 
-            Specializing in React, Node.js, and modern web technologies.
+
+          <p className="mx-auto mb-10 max-w-2xl text-lg md:text-xl text-muted-foreground">
+            I build fast, accessible web apps with{" "}
+            <span className="text-primary">React</span>,
+            <span className="text-primary"> Node.js</span> and{" "}
+            <span className="text-primary">Tailwind</span>.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Button size="lg" onClick={() => scrollToSection("projects")}>
-              View My Work
+            <Button asChild size="lg">
+              <a href="#projects">View My Work</a>
             </Button>
-            <Button variant="outline" size="lg" onClick={() => scrollToSection("contact")}>
-              Get In Touch
+            <Button asChild variant="outline" size="lg">
+              <a href="#contact">Get In Touch</a>
             </Button>
           </div>
 
-          <div className="flex items-center justify-center gap-6">
+          <nav
+            aria-label="Social Links"
+            className="flex items-center justify-center gap-6"
+          >
             <a
-              href="https://github.com"
+              href="https://github.com/carabetcorneliu"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              <Github className="h-6 w-6" />
+              <span className="sr-only">GitHub</span>
+              <Github className="h-6 w-6" aria-hidden="true" />
             </a>
             <a
               href="https://linkedin.com"
@@ -52,24 +58,27 @@ export function Hero() {
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              <Linkedin className="h-6 w-6" />
+              <span className="sr-only">LinkedIn</span>
+              <Linkedin className="h-6 w-6" aria-hidden="true" />
             </a>
             <a
-              href="mailto:john@example.com"
+              href="mailto:carabet.corneliu@gmail.com"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              <Mail className="h-6 w-6" />
+              <span className="sr-only">Email</span>
+              <Mail className="h-6 w-6" aria-hidden="true" />
             </a>
-          </div>
+          </nav>
         </div>
       </div>
 
-      <button
-        onClick={() => scrollToSection("about")}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-muted-foreground hover:text-foreground transition-colors animate-bounce"
+      <a
+        href="#about"
+        aria-label="Scroll to About section"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-muted-foreground hover:text-foreground transition-colors motion-safe:animate-bounce"
       >
-        <ArrowDown className="h-6 w-6" />
-      </button>
+        <ArrowDown className="h-6 w-6" aria-hidden="true" />
+      </a>
     </section>
   );
 }
