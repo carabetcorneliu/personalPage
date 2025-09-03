@@ -5,54 +5,60 @@ export function Skills() {
   const skillCategories = [
     {
       title: "Frontend",
-      skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vue.js", "Sass"]
+      skills: ["React", "TypeScript", "Javascript", "Next.js", "Tailwind CSS"],
     },
     {
       title: "Backend",
-      skills: ["Node.js", "Express", "Python", "PostgreSQL", "MongoDB", "Redis"]
+      skills: ["Node.js", "Express", "PostgreSQL", "Prisma", "MongoDB"],
     },
     {
       title: "Tools & DevOps",
-      skills: ["Git", "Docker", "AWS", "Vercel", "Jest", "Cypress"]
+      skills: [
+        "VSCode / Windsurf",
+        "Git & GitHub",
+        "Postman",
+        "Vercel",
+        "Jest",
+        "Kinde",
+        "Netlify",
+      ],
     },
     {
       title: "Design",
-      skills: ["Figma", "Adobe XD", "Photoshop", "UI/UX Design", "Responsive Design"]
-    }
+      skills: ["Figma", "Photoshop", "Illustrator", "AutoCAD"],
+    },
   ];
 
   const highlights = [
     {
-      title: "5+ Years",
-      description: "Professional Experience"
+      title: "12+ Months",
+      description: "Hands-on Full-Stack Development Experience",
     },
     {
-      title: "50+ Projects",
-      description: "Successfully Delivered"
+      title: "10+ Projects",
+      description: "Personal and Learning Projects Delivered",
     },
     {
-      title: "100%",
-      description: "Client Satisfaction"
+      title: "Focused on Quality",
+      description: "Clean Code & Usable Interfaces",
     },
     {
-      title: "24/7",
-      description: "Continuous Learning"
-    }
+      title: "Continuous Learning",
+      description: "Keeping Up with Modern Web Development",
+    },
   ];
 
   return (
     <section id="skills" className="py-20">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">Skills & Expertise</Badge>
-            <h2 className="text-3xl md:text-4xl mb-6">
-              Technologies I work with
+          <div className="text-center mb-12">
+            <Badge variant="outline" className="mb-2">
+              Skills & Expertise
+            </Badge>
+            <h2 id="skills" className="sr-only">
+              Skills
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              I stay up-to-date with the latest technologies and best practices 
-              to deliver cutting-edge solutions.
-            </p>
           </div>
 
           {/* Stats */}
@@ -79,7 +85,11 @@ export function Skills() {
                   <h3 className="text-lg font-medium mb-4">{category.title}</h3>
                   <div className="space-y-2">
                     {category.skills.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="secondary" className="mr-2 mb-2">
+                      <Badge
+                        key={skillIndex}
+                        variant="secondary"
+                        className="mr-2 mb-2"
+                      >
                         {skill}
                       </Badge>
                     ))}
