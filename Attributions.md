@@ -1,3 +1,6 @@
-This Figma Make file includes components from [shadcn/ui](https://ui.shadcn.com/) used under [MIT license](https://github.com/shadcn-ui/ui/blob/main/LICENSE.md).
+This project was built with the help of some great tools and resources:
 
-This Figma Make file includes photos from [Unsplash](https://unsplash.com) used under [license](https://unsplash.com/license).
+Figma – assisted in shaping the design and layout ideas.
+ChatGPT – supported with code analysis and explanations during development.
+
+Big thanks to these tools for making the process smoother and more enjoyable.
