@@ -4,7 +4,8 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, Clock10, Send } from "lucide-react";
+import { SiTelegram } from "react-icons/si";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -35,20 +36,38 @@ export function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "carabet.corneliu@gmail.com",
-      link: "mailto:carabet.corneliu@gmail.com",
+      value: (
+        <span style={{ unicodeBidi: "bidi-override", direction: "rtl" }}>
+          <span>moc.liamg</span>
+          <span>@</span>
+          <span>uilenroc.tebarac</span>
+        </span>
+      ),
+      link: "/go/email",
     },
     {
-      icon: Phone,
-      label: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      icon: SiTelegram,
+      label: "Telegram",
+      value: (
+        <span style={{ unicodeBidi: "bidi-override", direction: "rtl" }}>
+          <span>uilenroC</span>
+          <span>tebaraC</span>
+          <span>@</span>
+        </span>
+      ),
+      link: "/go/telegram",
     },
     {
-      icon: MapPin,
-      label: "Location",
-      value: "San Francisco, CA",
-      link: "https://maps.google.com",
+      icon: Clock10,
+      label: "Availability",
+      value: (
+        <>
+          <span className="text-primary">Typically respond </span>
+          <span className="text-blue-500">within </span>
+          <span className="text-red-500">24 </span>
+          <span className="text-primary">hours or less</span>
+        </>
+      ),
     },
   ];
 

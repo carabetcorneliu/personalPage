@@ -32,8 +32,10 @@ export function Footer() {
                 <span className="text-muted-foreground">Corneliu</span>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
-                Full Stack Developer • passionate about creating exceptional
-                digital experiences through clean code and thoughtful design.
+                • Full Stack Developer •
+                <br />
+                passionate about creating exceptional digital experiences
+                through clean code and thoughtful design.
               </p>
               <Badge variant="secondary">Available for projects</Badge>
             </div>
@@ -73,12 +75,14 @@ export function Footer() {
               </div>
               <div className="mt-4">
                 <p className="text-sm text-muted-foreground">
-                  carabet.corneliu@gmail.com
+                  <span
+                    style={{ unicodeBidi: "bidi-override", direction: "rtl" }}
+                  >
+                    <span>moc.liamg</span>
+                    <span>@</span>
+                    <span>uilenroc.tebarac</span>
+                  </span>
                 </p>
-                {/* space for telegram link
-                <p className="text-sm text-muted-foreground">
-                  +1 (555) 123-4567
-                </p> */}
               </div>
             </div>
           </div>

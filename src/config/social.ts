@@ -1,9 +1,15 @@
 // import { Github, Linkedin, Mail, Twitter, Telegram } from "lucide-react";
 // import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
-import { SiGithub, SiLinkedin, SiX, SiMailboxdotorg } from "react-icons/si";
+// import { SiX } from "react-icons/si";
+import {
+  SiGithub,
+  SiLinkedin,
+  SiTelegram,
+  SiMailboxdotorg,
+} from "react-icons/si";
 
 export type SocialLink = {
-  id: "github" | "linkedin" | "x" | "email" | "website";
+  id: "github" | "linkedin" | "telegram" | "email" | "website";
   label: string;
   href: string;
   icon?: React.ComponentType<{ className?: string }>;
@@ -14,28 +20,35 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     id: "github",
     label: "GitHub",
-    href: "https://github.com/carabetcorneliu",
+    href: "/go/github",
     icon: SiGithub,
     rel: "noopener noreferrer",
   },
   {
     id: "linkedin",
     label: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "/go/linkedin",
     icon: SiLinkedin,
     rel: "noopener noreferrer",
   },
+  // {
+  //   id: "x",
+  //   label: "X",
+  //   href: "/go/x",
+  //   icon: SiX,
+  //   rel: "noopener noreferrer",
+  // },
   {
-    id: "x",
-    label: "X",
-    href: "https://x.com/CarabetCornel",
-    icon: SiX,
+    id: "telegram",
+    label: "Telegram",
+    href: "/go/telegram",
+    icon: SiTelegram,
     rel: "noopener noreferrer",
   },
   {
     id: "email",
     label: "Email",
-    href: "mailto:carabet.corneliu@gmail.com",
+    href: "/go/email",
     icon: SiMailboxdotorg,
   },
   //   {
