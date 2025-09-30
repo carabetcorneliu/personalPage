@@ -28,7 +28,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     id: "x",
     label: "X",
-    href: "https://x.com",
+    href: "https://x.com/CarabetCornel",
     icon: SiX,
     rel: "noopener noreferrer",
   },
