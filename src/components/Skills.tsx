@@ -31,7 +31,7 @@ export function Skills() {
 
   const highlights = [
     {
-      title: "12+ Months",
+      title: "18+ Months",
       description: "Hands-on Full-Stack Development Experience",
     },
     {

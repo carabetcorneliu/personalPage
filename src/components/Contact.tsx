@@ -11,17 +11,20 @@ export function Contact() {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
+    // TODO: Implement form submission logic
     console.log("Form submitted:", formData);
     // Reset form
     setFormData({ name: "", email: "", subject: "", message: "" });
@@ -32,21 +35,21 @@ export function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "john.doe@example.com",
-      link: "mailto:john.doe@example.com"
+      value: "carabet.corneliu@gmail.com",
+      link: "mailto:carabet.corneliu@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
       value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      link: "tel:+15551234567",
     },
     {
       icon: MapPin,
       label: "Location",
       value: "San Francisco, CA",
-      link: "https://maps.google.com"
-    }
+      link: "https://maps.google.com",
+    },
   ];
 
   return (
@@ -54,13 +57,14 @@ export function Contact() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">Get In Touch</Badge>
-            <h2 className="text-3xl md:text-4xl mb-6">
-              Let's work together
-            </h2>
+            <Badge variant="outline" className="mb-4">
+              Get In Touch
+            </Badge>
+            <h2 className="text-3xl md:text-4xl mb-6">Let's work together</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              I'm always interested in hearing about new projects and opportunities. 
-              Whether you have a question or just want to say hi, I'll try my best to get back to you!
+              I'm interested in hearing about new projects and opportunities.
+              Whether you have a question or just want to say hi, I'll try my
+              best to get back to you!
             </p>
           </div>
 
@@ -146,7 +150,9 @@ export function Contact() {
                           <info.icon className="h-6 w-6 text-primary" />
                         </div>
                         <div>
-                          <p className="text-sm text-muted-foreground">{info.label}</p>
+                          <p className="text-sm text-muted-foreground">
+                            {info.label}
+                          </p>
                           <a
                             href={info.link}
                             target="_blank"
@@ -163,15 +169,18 @@ export function Contact() {
 
                 <Card className="bg-primary text-primary-foreground">
                   <CardHeader>
-                    <CardTitle className="text-lg">Available for Work</CardTitle>
+                    <CardTitle className="text-lg">
+                      Available for Work
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm opacity-90 mb-4">
-                      I'm currently available for freelance projects and full-time opportunities. 
-                      Let's discuss how we can work together!
+                      I'm currently available for freelance projects and
+                      full-time opportunities. Let's discuss how we can work
+                      together!
                     </p>
-                    <Button 
-                      variant="secondary" 
+                    <Button
+                      variant="secondary"
                       size="sm"
                       onClick={() => window.open("mailto:john.doe@example.com")}
                     >

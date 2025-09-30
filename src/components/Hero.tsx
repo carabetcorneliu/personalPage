@@ -1,6 +1,7 @@
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
-import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
+import { ArrowDown } from "lucide-react";
+import { SOCIAL_LINKS } from "../config/social";
 
 export function Hero() {
   return (
@@ -43,31 +44,18 @@ export function Hero() {
             aria-label="Social Links"
             className="flex items-center justify-center gap-6"
           >
-            <a
-              href="https://github.com/carabetcorneliu"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <span className="sr-only">GitHub</span>
-              <Github className="h-6 w-6" aria-hidden="true" />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <span className="sr-only">LinkedIn</span>
-              <Linkedin className="h-6 w-6" aria-hidden="true" />
-            </a>
-            <a
-              href="mailto:carabet.corneliu@gmail.com"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <span className="sr-only">Email</span>
-              <Mail className="h-6 w-6" aria-hidden="true" />
-            </a>
+            {SOCIAL_LINKS.map(({ id, label, href, icon: Icon, rel }) => (
+              <a
+                key={id}
+                href={href}
+                target="_blank"
+                rel={rel}
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <span className="sr-only">{label}</span>
+                <Icon className="h-6 w-6" aria-hidden="true" />
+              </a>
+            ))}
           </nav>
         </div>
       </div>

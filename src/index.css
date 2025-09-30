@@ -1,4 +1,4 @@
 @import "tailwindcss";
 
 /* Import global theme tokens and base layers */
-@import "../styles/globals.css";
+@import "./styles/globals.css";

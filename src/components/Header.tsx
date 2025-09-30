@@ -57,8 +57,8 @@ export function Header() {
             href="#hero"
             className="text-lg font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 rounded"
           >
-            <span className="text-primary">Corneliu</span>
-            <span className="text-muted-foreground">Carabet</span>
+            <span className="text-primary">Carabet</span>
+            <span className="text-muted-foreground">Corneliu</span>
           </a>
 
           {/* Desktop Navigation */}

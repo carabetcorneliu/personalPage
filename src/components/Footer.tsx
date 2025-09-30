@@ -1,39 +1,16 @@
 import { Badge } from "./ui/badge";
 import { Separator } from "./ui/separator";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { SOCIAL_LINKS } from "../config/social";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    {
-      icon: Github,
-      href: "https://github.com",
-      label: "GitHub"
-    },
-    {
-      icon: Linkedin,
-      href: "https://linkedin.com",
-      label: "LinkedIn"
-    },
-    {
-      icon: Twitter,
-      href: "https://twitter.com",
-      label: "Twitter"
-    },
-    {
-      icon: Mail,
-      href: "mailto:john.doe@example.com",
-      label: "Email"
-    }
-  ];
 
   const quickLinks = [
     { label: "Home", href: "#hero" },
     { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" }
+    { label: "Contact", href: "#contact" },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -51,12 +28,12 @@ export function Footer() {
             {/* Brand */}
             <div>
               <div className="text-lg font-medium mb-4">
-                <span className="text-primary">John</span>
-                <span className="text-muted-foreground">Doe</span>
+                <span className="text-primary">Carabet</span>
+                <span className="text-muted-foreground">Corneliu</span>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
-                Full Stack Developer passionate about creating exceptional digital experiences 
-                through clean code and thoughtful design.
+                Full Stack Developer • passionate about creating exceptional
+                digital experiences through clean code and thoughtful design.
               </p>
               <Badge variant="secondary">Available for projects</Badge>
             </div>
@@ -81,26 +58,27 @@ export function Footer() {
             <div>
               <h4 className="font-medium mb-4">Connect</h4>
               <div className="flex gap-4">
-                {socialLinks.map((social, index) => (
+                {SOCIAL_LINKS.map(({ id, label, href, icon: Icon, rel }) => (
                   <a
-                    key={index}
-                    href={social.href}
+                    key={id}
+                    href={href}
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 bg-background rounded-lg text-muted-foreground hover:text-foreground transition-colors"
-                    aria-label={social.label}
+                    rel={rel}
+                    className="text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    <social.icon className="h-5 w-5" />
+                    <span className="sr-only">{label}</span>
+                    <Icon className="h-5 w-5" aria-hidden="true" />
                   </a>
                 ))}
               </div>
               <div className="mt-4">
                 <p className="text-sm text-muted-foreground">
-                  john.doe@example.com
+                  carabet.corneliu@gmail.com
                 </p>
+                {/* space for telegram link
                 <p className="text-sm text-muted-foreground">
                   +1 (555) 123-4567
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -109,7 +87,7 @@ export function Footer() {
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground">
-              © {currentYear} John Doe. All rights reserved.
+              © {currentYear} Carabet Corneliu. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-foreground transition-colors">
