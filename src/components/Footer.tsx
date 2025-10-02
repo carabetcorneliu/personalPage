@@ -31,13 +31,16 @@ export function Footer() {
                 <span className="text-primary">Carabet</span>
                 <span className="text-muted-foreground">Corneliu</span>
               </div>
-              <p className="text-sm text-muted-foreground mb-4">
+              <p className="text-sm text-muted-foreground mb-2">
                 • Full Stack Developer •
-                <br />
+              </p>
+              <p className="text-sm text-muted-foreground mb-4">
                 passionate about creating exceptional digital experiences
                 through clean code and thoughtful design.
               </p>
-              <Badge variant="secondary">Available for projects</Badge>
+              <div className="flex justify-end">
+                <Badge variant="secondary">Available for projects</Badge>
+              </div>
             </div>
 
             {/* Quick Links */}

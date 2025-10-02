@@ -7,50 +7,48 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 export function Projects() {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Chef Claude App",
       description:
-        "A full-featured e-commerce platform built with React, Node.js, and Stripe integration. Features include user authentication, shopping cart, payment processing, and admin dashboard.",
-      image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+        "A cooking assistant, on top of Generative AI API for shortening the interval - from counting the ingredients to deciding what to cook.",
+      image: "/src/img/projects/chef-claude-project2.jpg",
       technologies: [
         "React",
-        "Node.js",
-        "PostgreSQL",
-        "Stripe",
+        "TypeScript",
         "Tailwind CSS",
+        "React Markdown",
+        "Context API",
+        "Mistral API",
+        "Hugging Face models",
+        "Vite",
+        "EsLint",
+        "Prettier",
       ],
-      demoLink: "https://example.com",
-      githubLink: "https://github.com/example",
+      demoLink: "https://chef-claude-recipe.netlify.app/",
+      githubLink: "https://github.com/carabetcorneliu/Chef-Claude-App",
     },
     {
       title: "Task Management App",
       description:
-        "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features. Built using modern React patterns.",
-      image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-      technologies: ["React", "TypeScript", "Firebase", "Material-UI"],
-      demoLink: "https://example.com",
-      githubLink: "https://github.com/example",
+        "A lightweight and feature-rich task management tool. Built with TypeScript for type safety and scalability, the app demonstrates front-end development best practices and provides a polished user experience.",
+      image: "/src/img/projects/todo-project2.jpg",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Kinde"],
+      demoLink: "https://todo-app-orpin-eta-35.vercel.app/",
+      githubLink: "https://github.com/carabetcorneliu/ToDo-App-Portfolio",
     },
     {
-      title: "Weather Dashboard",
+      title: "Personal Page",
       description:
-        "An interactive weather dashboard that displays current conditions, forecasts, and weather maps. Features geolocation, city search, and responsive design.",
-      image:
-        "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
-      technologies: ["Vue.js", "Express", "Weather API", "Chart.js"],
-      demoLink: "https://example.com",
-      githubLink: "https://github.com/example",
-    },
-    {
-      title: "Portfolio Website",
-      description:
-        "A responsive portfolio website built with Next.js and Tailwind CSS. Features smooth animations, dark mode, and optimized performance.",
-      image:
-        "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
-      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
-      demoLink: "https://example.com",
-      githubLink: "https://github.com/example",
+        "A responsive website built with React and Tailwind CSS. Features smooth animations and optimized performance. Built around skill presentation, projects and contacts",
+      image: "/src/img/projects/personal-page-project.jpg",
+      technologies: [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Netlify",
+      ],
+      demoLink: "https://carabetcorneliu.netlify.app/",
+      githubLink: "https://github.com/carabetcorneliu/personalPage",
     },
   ];
 
@@ -136,11 +134,7 @@ export function Projects() {
 
           <div className="text-center mt-12">
             <Button variant="outline" size="lg" asChild>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="/go/github" target="_blank" rel="noopener noreferrer">
                 <Github className="h-5 w-5 mr-2" />
                 View All Projects on GitHub
               </a>

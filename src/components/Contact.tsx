@@ -83,7 +83,7 @@ export function Contact() {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               I'm interested in hearing about new projects and opportunities.
               Whether you have a question or just want to say hi, I'll try my
-              best to get back to you!
+              best to get back to you fast!
             </p>
           </div>
 
