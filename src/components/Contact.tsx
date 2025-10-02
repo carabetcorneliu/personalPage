@@ -23,7 +23,7 @@ export function Contact() {
   };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    // e.preventDefault();
     // Handle form submission here
     // TODO: Implement form submission logic
     console.log("Form submitted:", formData);
@@ -100,6 +100,12 @@ export function Contact() {
                     onSubmit={handleSubmit}
                     className="space-y-6"
                   >
+                    <p className="hidden">
+                      <label>
+                        Don't fill this out if you're human:{" "}
+                        <input name="bot-field" />
+                      </label>
+                    </p>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="name" className="block text-sm mb-2">
