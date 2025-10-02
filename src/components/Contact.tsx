@@ -23,13 +23,27 @@ export function Contact() {
   };
 
   const handleSubmit = (e: React.FormEvent) => {
-    // e.preventDefault();
+    e.preventDefault();
     // Handle form submission here
-    // TODO: Implement form submission logic
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    alert("Thank you for your message! I'll get back to you soon.");
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams(formData as any).toString(),
+    })
+      .then(() => {
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        alert("Thank you for your message! I'll get back to you soon.");
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+        alert("An error occurred while submitting the form. Please try again.");
+      });
   };
 
   const contactInfo = [
@@ -100,6 +114,7 @@ export function Contact() {
                     onSubmit={handleSubmit}
                     className="space-y-6"
                   >
+                    <input type="hidden" name="form-name" value="contact" />
                     <p className="hidden">
                       <label>
                         Don't fill this out if you're human:{" "}
