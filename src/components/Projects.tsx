@@ -10,7 +10,7 @@ export function Projects() {
       title: "Chef Claude App",
       description:
         "A cooking assistant, on top of Generative AI API for shortening the interval - from counting the ingredients to deciding what to cook.",
-      image: "/src/img/projects/chef-claude-project2.jpg",
+      image: "/img/projects/chef-claude-project2.jpg",
       technologies: [
         "React",
         "TypeScript",
@@ -30,7 +30,7 @@ export function Projects() {
       title: "Task Management App",
       description:
         "A lightweight and feature-rich task management tool. Built with TypeScript for type safety and scalability, the app demonstrates front-end development best practices and provides a polished user experience.",
-      image: "/src/img/projects/todo-project2.jpg",
+      image: "/img/projects/todo-project2.jpg",
       technologies: ["React", "TypeScript", "Tailwind CSS", "Kinde"],
       demoLink: "https://todo-app-orpin-eta-35.vercel.app/",
       githubLink: "https://github.com/carabetcorneliu/ToDo-App-Portfolio",
@@ -39,7 +39,7 @@ export function Projects() {
       title: "Personal Page",
       description:
         "A responsive website built with React and Tailwind CSS. Features smooth animations and optimized performance. Built around skill presentation, projects and contacts",
-      image: "/src/img/projects/personal-page-project.jpg",
+      image: "/img/projects/personal-page-project.jpg",
       technologies: [
         "React",
         "TypeScript",
