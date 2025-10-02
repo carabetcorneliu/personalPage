@@ -60,10 +60,10 @@ export function Projects() {
             <Badge variant="outline" className="mb-4">
               Featured Work
             </Badge>
-            <h2 className="text-3xl md:text-4xl mb-6">Projects I'm proud of</h2>
+            <h2 className="text-3xl md:text-4xl mb-6">Things I've Built</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Here are some of my recent projects that showcase my skills and
-              passion for creating exceptional user experiences.
+              Here are some of my recent projects that highlight my skills in
+              front-end and full-stack development.
             </p>
           </div>
 

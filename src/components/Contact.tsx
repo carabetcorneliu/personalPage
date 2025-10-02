@@ -82,7 +82,7 @@ export function Contact() {
             <h2 className="text-3xl md:text-4xl mb-6">Let's work together</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               I'm interested in hearing about new projects and opportunities.
-              Whether you have a question or just want to say hi, I'll try my
+              Whether you have a question or just want to say hi, I'll do my
               best to get back to you fast!
             </p>
           </div>
