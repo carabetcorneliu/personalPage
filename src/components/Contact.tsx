@@ -46,6 +46,12 @@ export function Contact() {
       });
   };
 
+  const handleClickHireMe = () => {
+    const formElement = document.getElementById("name");
+    formElement?.scrollIntoView({ behavior: "smooth" });
+    formElement?.focus();
+  };
+
   const contactInfo = [
     {
       icon: Mail,
@@ -229,7 +235,7 @@ export function Contact() {
                     <Button
                       variant="secondary"
                       size="sm"
-                      onClick={() => window.open("mailto:john.doe@example.com")}
+                      onClick={handleClickHireMe}
                     >
                       Hire Me
                     </Button>
